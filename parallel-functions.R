@@ -9,6 +9,14 @@
 # available - Matrix composed with available.packages -function from parallel -packet.
 find.cran.dependencies <- function( pkgs, available ) {
 	
+	## Test if all packages can be found from available
+	err <- try( utils:::.make_dependency_list(pkgs, available, recursive = TRUE) )
+	
+	if( is(err,'try-error')) {
+		stop("Error: Some packages can't be found from available packages.")
+		}
+		
+	
 	## Make dependency list for packages
 	dependency.list <- utils:::.make_dependency_list(pkgs, available, recursive = TRUE)
 	dependency.list <- lapply(dependency.list, function(x) x[x %in% pkgs])
