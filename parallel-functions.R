@@ -15,7 +15,6 @@ find.cran.dependencies <- function( pkgs, available ) {
 	if( is(err,'try-error')) {
 		stop("Error: Some packages can't be found from available packages.")
 		}
-		
 	
 	## Make dependency list for packages
 	dependency.list <- utils:::.make_dependency_list(pkgs, available, recursive = TRUE)
