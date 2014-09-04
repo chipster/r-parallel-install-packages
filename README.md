@@ -4,26 +4,29 @@ Set of functions to install multiple R packages and their dependencies in parall
 
 
 ##Files
+
 ´´´
 *parallel-functions.R*
 The beef. Functions to install packages and find their dependencies. More specific description of functions below.
-
-
+´´´
+´´´
 *smip.R*
 SMart Install Packages (SMIP): User friendly interface into install.packages(...) and biocLite(...)
 All functions check existence of packages before installation and skip installation if the package already exists. For group of packages, each one is checked individually and only missing ones are installed.
 Function also offer more automation compared to original ones, allowing installation of whole repositories, scavenging web pages for packages etc.
 For more info and examples for usage in the file.
-
-
+´´´
+´´´
 *parallel-example.R* 
 Short example how to use parallel functions with parallel-example.R -script. 
 Usage: Takes 3 arguments, package type, file where is list of packages and number of parallel installs.
 ./Rscript --vanilla ./parallel-example.R cran cran-packs.txt 4  
-
+´´´
+´´´
 *LICENSE*
 The MIT license
-
+´´´
+´´´
 *README.md*
 This README-text.
 ´´´
