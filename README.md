@@ -28,7 +28,8 @@ This README-text.
 
 parallel-functions.R consists multiple functions, here is short specification for each function and its purpose. 
 
-
+   
+   
 > find.cran.dependencies( pkgs, available )
 
 *pkgs* = A character vector of the packages    
@@ -36,15 +37,17 @@ parallel-functions.R consists multiple functions, here is short specification fo
 
 Function finds dependencies for packages and returns list of packages and their dependencies. Uses recursion, so it can find dependencies for packages that are dependencies for another packages. Returns a matrix with all packages needed to install and their dependencies.
 
-
-> *find.bioc.dependencies( pkgs, bioc.dependencies )* 
+   
+   
+> find.bioc.dependencies( pkgs, bioc.dependencies )
 
 *pkgs* = A character vector of the packages    
 *bioc.dependencies* = A matrix of all available packages and their dependencies.    
 
 Function finds dependencies for packages and returns list of packages and their dependencies. Uses recursion, so it can find dependencies for packages that are dependencies for another packages. Returns a matrix with all packages needed to install and their dependencies.
 
-
+   
+   
 > cran.install.packages( packages, parallel.installs ) 
 
 *packages* = A character vector of the packages to be installed   
@@ -52,7 +55,8 @@ Function finds dependencies for packages and returns list of packages and their 
 
 Installs CRAN packages and their dependencies using parallel socket cluster. It calls other parallel install functions to generate dependency list, send one package to be installed with install.packages() at one node, and wait for result from each node. Uses *parallel* and *method* -packages. Creates log file "cran_install_log.txt".
 
-
+   
+   
 > bioc.install.packages( packages, parallel.installs )
 
 *packages* = A character vector of the packages to be installed   
@@ -60,7 +64,8 @@ Installs CRAN packages and their dependencies using parallel socket cluster. It 
 
 Installs Bioconductor packages and their dependencies using parallel socket cluster. It calls other parallel install functions to generate dependency list, send one package to be installed with BiocLite() at one node, and wait for result from each node. Uses *parallel*, *method*, *biocLite.R*, *pkgDepTools*, *Biobase* and *Rgraphviz* -packages. Creates log file "bioc_install_log.txt".
 
-
+   
+   
 >http.install.packages( packages, parallel.installs )
 
 *packages* = A character vector of the packages to be installed   
@@ -68,6 +73,8 @@ Installs Bioconductor packages and their dependencies using parallel socket clus
 
 Installs HTTP packages using smart.install.packages -function from SMIP and parallel socket cluster. Calls http.submit() -function which sends one package to be installed with one node. Uses *parallel* and *method* packages. Creates log file "http_install_log.txt".
 
+   
+   
 >bioc.submit( cluster, node, one.package )
 >cran.submit( cluster, node, one.package )
 >http.submit( cluster, node, one.package )
@@ -78,6 +85,8 @@ Installs HTTP packages using smart.install.packages -function from SMIP and para
 
 Sends installation command to the one node of the cluster with one.package and parameters if needed. 
 
+   
+   
 >install.rest.of.packages( dependency.list, packages.done, available.nodes, cluster, packages, type )
 
 *dependency.list* = List of all packages and their dependencies made by *find.cran.dependencies()* of *find.bioc.dependencies()*   
