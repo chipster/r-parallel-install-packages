@@ -59,7 +59,8 @@ Function finds dependencies for packages and returns list of packages and their 
 
 Installs CRAN packages and their dependencies using parallel socket cluster. It calls other parallel install functions to generate dependency list, send one package to be installed with install.packages() at one node, and wait for result from each node. Uses *parallel* and *method* -packages. Creates log file "cran_install_log.txt".
 
-   
+   <br />
+
    
 > bioc.install.packages( packages, parallel.installs )
 
