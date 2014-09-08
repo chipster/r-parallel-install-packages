@@ -1,6 +1,7 @@
 # R parallel install packages
 Set of functions to install multiple R packages and their dependencies in parallel. Can be used with CRAN, Bioconductor and HTTP packages. 
 
+<br />
 
 ## Files
  *parallel-functions.R*   
@@ -28,7 +29,8 @@ This README-text.
 
 parallel-functions.R consists multiple functions, here is short specification for each function and its purpose. 
 
-   
+   <br />
+
    
 > find.cran.dependencies( pkgs, available )
 
@@ -37,7 +39,8 @@ parallel-functions.R consists multiple functions, here is short specification fo
 
 Function finds dependencies for packages and returns list of packages and their dependencies. Uses recursion, so it can find dependencies for packages that are dependencies for another packages. Returns a matrix with all packages needed to install and their dependencies.
 
-   
+   <br />
+
    
 > find.bioc.dependencies( pkgs, bioc.dependencies )
 
@@ -46,7 +49,8 @@ Function finds dependencies for packages and returns list of packages and their 
 
 Function finds dependencies for packages and returns list of packages and their dependencies. Uses recursion, so it can find dependencies for packages that are dependencies for another packages. Returns a matrix with all packages needed to install and their dependencies.
 
-   
+   <br />
+
    
 > cran.install.packages( packages, parallel.installs ) 
 
@@ -65,7 +69,8 @@ Installs CRAN packages and their dependencies using parallel socket cluster. It 
 Installs Bioconductor packages and their dependencies using parallel socket cluster. It calls other parallel install functions to generate dependency list, send one package to be installed with BiocLite() at one node, and wait for result from each node. Uses *parallel*, *method*, *biocLite.R*, *pkgDepTools*, *Biobase* and *Rgraphviz* -packages. Creates log file "bioc_install_log.txt".
 
    
-   
+   <br />
+
 >http.install.packages( packages, parallel.installs )
 
 *packages* = A character vector of the packages to be installed   
@@ -74,9 +79,12 @@ Installs Bioconductor packages and their dependencies using parallel socket clus
 Installs HTTP packages using smart.install.packages -function from SMIP and parallel socket cluster. Calls http.submit() -function which sends one package to be installed with one node. Uses *parallel* and *method* packages. Creates log file "http_install_log.txt".
 
    
-   
+   <br />
+
 >bioc.submit( cluster, node, one.package )
+
 >cran.submit( cluster, node, one.package )
+
 >http.submit( cluster, node, one.package )
 
 *cluster* = A local cluster made with makeCluster {parallel}   
@@ -85,6 +93,8 @@ Installs HTTP packages using smart.install.packages -function from SMIP and para
 
 Sends installation command to the one node of the cluster with one.package and parameters if needed. 
 
+   
+<br />
    
    
 >install.rest.of.packages( dependency.list, packages.done, available.nodes, cluster, packages, type )
